@@ -1,0 +1,24 @@
+[package]
+name = "picture-wasm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2.70"
+base64 = "0.12.1"
+image = { version = "0.23.4", default-features = false, features = ["jpeg", "png"] }
+console_error_panic_hook = { version = "0.1.1", optional = true }
+wee_alloc = { version = "0.4.2", optional = true }
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'Document',
+  'Element',
+  'HtmlElement',
+  'Node',
+  'Window',
+]
